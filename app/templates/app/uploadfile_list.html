@@ -1,0 +1,9 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'app:multi_upload_with_model' %}">Go to File Upload Page</a></p>
+    <h1>List of files</h1>
+    {% for uploadfile in uploadfile_list %}
+        <p><a href="{{ uploadfile.file.url }}">{{ uploadfile.file.url }}</a></p>
+    {% endfor %}
+{% endblock %}
